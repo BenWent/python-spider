@@ -53,8 +53,9 @@ experience_pattern = re.compile(r"<!--<i></i>-->(.*)\s+")
 wb = workbook.Workbook()
 ws = wb.active#建立一个Excel表格
 
+ws.append(['公司','职位','地址','工资','经验'])
 while True:
-    time.sleep(1)#浏览器解析JavaScript获得可见的页面
+    time.sleep(0.5)#浏览器解析JavaScript获得可见的页面
 
     companies = company_pattern.findall(browser.page_source)
     positions = position_pattern.findall(browser.page_source)
@@ -69,8 +70,11 @@ while True:
     for index,company in enumerate(companies):
         ws.append([company,positions[index],locations[index],salaries[index],experiences[index]])
 
-    next_button = browser.find_element_by_class_name("pager_next")
-    next_button.click()
+    try:
+        next_button = browser.find_element_by_class_name("pager_next")#可能存在职位太少，不用分页
+        next_button.click()
+    except:
+        break
     try:
         if browser.find_element_by_class_name("pager_next_disabled"):
             break
