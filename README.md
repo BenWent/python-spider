@@ -21,3 +21,17 @@
  <b>book_analysis.py</b>：爬取红楼梦的各个评论的star数、日期以此来绘制直方图，查看红楼梦在哪段时期比较火，哪段时期相对而言评价较低
 </p>
 
+<p>
+ <b>pyautoguiDemo.py</b>：pyautogui可以模拟用户键盘输入，这个示例展示了自动右键保存某网页上的所有图片
+</p>
+
+<p>
+ <b>headless-browser/headless-chromeDemo.py</b>：使用selenium以无gui的形式打开chrome浏览器
+</p>
+
+<p>
+ <b>headless-browser/phantomJSDemo.py</b>：phantomJS是一个基于Webkit的无界面浏览器,它能将网页加载到内容并解析出页面上的JavaScript。该示例演示了如何将seleniu与phantomJS与selenium结合起来使用：访问百度首页并截屏
+</p>
+
+
+
